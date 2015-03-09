@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "description": "",
   "main": "app.js",
-
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -12,6 +11,7 @@
     "expect.js": "^0.3.1",
     "gulp": "^3.8.5",
     "gulp-if": "^1.2.5",
+    "gulp-install": "^0.2.0",
     "gulp-jshint": "^1.6.3",
     "gulp-karma": "0.0.4",
     "gulp-nodemon": "^1.0.4",
