@@ -20,6 +20,10 @@ angular.module('vitastats.foods', [])
 
   };
 
+  $scope.toggleFood = function() {
+    console.log("inside togglefood");
+  }
+
   $scope.getFoods();
 })
 .filter('searchFor', function(){

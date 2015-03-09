@@ -21,7 +21,6 @@ module.exports = {
   },
 
   allFoods: function (req, res, next) {
-    console.log('in foodController.allFoods!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
   var findAll = Q.nbind(Food.find, Food);
 
   findAll({})

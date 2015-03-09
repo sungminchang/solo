@@ -1,8 +1,8 @@
 <div id='food'>
   <h1>Food choices</h1>
-    <div class="info" ng-repeat="food in data.foods">
-      <div class='name'>{{food.name}}</div>
-      <div class='description'>{{food.description}}</div>
+    <div class="info" ng-repeat="food in data.foods" ng-click="toggleFood()">
+      <p class='name'>{{food.name}}</p>
+      <p class='description'>{{food.description}}</p>
 
     </div>
 </div>
