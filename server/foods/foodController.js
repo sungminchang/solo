@@ -1,6 +1,6 @@
 var Food    = require('./foodModel.js'),
-    Q       = require('q'),
-    util    = require('../config/utils.js');
+    Q       = require('q');
+    // util    = require('../config/utils.js');
 
 
 module.exports = {
@@ -38,9 +38,9 @@ module.exports = {
     // console.log(req.body)
     var url = req.body.food;
     console.log(req.body);
-    if (!util.isValidUrl(url)) {
-      return next(new Error('Not a valid food'));
-    }
+    // if (!util.isValidUrl(url)) {
+    //   return next(new Error('Not a valid food'));
+    // }
 
     var createFood = Q.nbind(Food.create, Food);
     var findFood = Q.nbind(Food.findOne, Food);
@@ -50,7 +50,7 @@ module.exports = {
         if (match) {
           res.send(match);
         } else {
-          return  util.getUrlTitle(url);
+          return url // util.getUrlTitle(url);
         }
       })
       .then(function (title) {

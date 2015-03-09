@@ -1,3 +1,3 @@
-{"name": "Chipotle Bowl", "vitamins": {"A": 0, "B": 10, "D":2,"Calcium": 10}}
-{"name": "Sarku Bowl", "vitamins": {"A": 0, "B": 0, "D":0,"Calcium": 0}}
-{"name": "Subway", "vitamins": {"A": 10, "B": 2, "D":2,"Calcium": 2}}
+{"name": "Chipotle Bowl", "vitamins": {"A": 0, "B": 10, "D":2,"Calcium": 10}, "description": "This beefy bowl for champions is an American favorite."}
+{"name": "Sarku Bowl", "vitamins": {"A": 0, "B": 0, "D":0,"Calcium": 0}, "description": "This sweety and savory bowl is best tackled with two forks."}
+{"name": "Subway", "vitamins": {"A": 10, "B": 2, "D":2,"Calcium": 2}, "description": "For those with no other options."}

@@ -3,15 +3,16 @@
 
 angular.module('vitastats.foods', [])
 
-.controller('LinksController', function ($scope, $http, Food) {
+.controller('FoodsController', function ($scope, $http, Foods) {
   // Your code here
   $scope.data = {};
-  $scope.predicate = '-visits';
 
-  $scope.getLinks = function() {
-    Food.retrieveFoods()
+  $scope.getFoods = function() {
+    console.log("about to try to retrieveFoods from inside the getFoods function!")
+    Foods.retrieveFoods()
       .then(function(data) {
-        $scope.data.links = data;
+        console.log(data);
+        $scope.data.foods = data;
       })
       .catch(function(error) {
         console.error(error);

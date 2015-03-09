@@ -17,6 +17,8 @@ module.exports = function (app, express) {
   app.use('/api/users', userRouter); // use user router for all user request
 
   app.use('/api/foods', foodRouter);
+  app.use(helpers.errorLogger);
+  app.use(helpers.errorHandler);
   // authentication middleware used to decode token and made available on the request
   //app.use('/api/links', helpers.decode);
   // app.use('/api/links', foodRouter); // user link router for link request
@@ -25,5 +27,5 @@ module.exports = function (app, express) {
 
   // inject our routers into their respective route files
   require('../users/userRoutes.js')(userRouter);
-  // require('../food/foodRoutes.js')(foodRouter);
+  require('../foods/foodRoutes.js')(foodRouter);
 };
