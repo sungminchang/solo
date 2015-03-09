@@ -1,0 +1,14 @@
+{ "salt" : "$2a$10$0o2YICn23leTMaHI.2cTmu", "username" : "asdfasdf", "password" : "$2a$10$0o2YICn23leTMaHI.2cTmuVPdw3Gq5GUGPr748/jj7ohZhbUQZS9.", "_id" : { "$oid" : "54fe005caddfb29125984d66" }, "__v" : 0 }
+{ "salt" : "$2a$10$teDG/bThTAjR2ZGm0B47Oe", "username" : "hi", "password" : "$2a$10$teDG/bThTAjR2ZGm0B47OeC65x72h9T01sJWuZvwEUgX/UlwEelBG", "_id" : { "$oid" : "54fe00851da90cc7258ac459" }, "__v" : 0 }
+{ "salt" : "$2a$10$zh7KpYgnSl25Tg4YJ7zOs.", "username" : "asdf", "password" : "$2a$10$zh7KpYgnSl25Tg4YJ7zOs.dg.XfgVwakOvNeMHTJI14BITtoeO/Lq", "_id" : { "$oid" : "54fe01c393e6962d2758eb00" }, "__v" : 0 }
+
+
+
+// Used command 'mongoexport --db vitastats --collection users --out vitastatsUsers.json'
+// to get this file.
+// From the guide http://docs.mongodb.org/manual/core/import-export/#ImportExportTools-mongoimport   ◼
+
+
+// Used command 'mongoimport --db vitastats --collection foods --file sampleFoods.json'
+// to import sample files into database.
+
