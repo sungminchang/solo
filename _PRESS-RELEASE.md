@@ -14,31 +14,54 @@ If the press release is more than a page and a half, it is probably too long. Ke
 Oh, and I also like to write press-releases in what I call "Oprah-speak" for mainstream consumer products. Imagine you're sitting on Oprah's couch and have just explained the product to her, and then you listen as she explains it to her audience. That's "Oprah-speak", not "Geek-speak".
 
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
+
+Log in, log out
+
+See stats for the day
+
+    Add food to list of what you've eaten
+        Organize by time/meal? Should be drag and drop or something.
+
+    Adjust food size from the base given size.
+
+Check past days diets
+
+See suggestions for your next meal that would help you hit your vitamin requirements. (assuming breakfast, lunch, dinner are the meals you eat)
+
+Add friends and see their diets
+
+Vitamin battles
+
+    See who can skirt the edge of the maximum daily dose on vitamins for the longest or something
+
+Vitamin achievements
+
+
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > Vitastats.
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > Track your daily vitamin intake. Vitastats!
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Ever wonder if you're getting all of your recommended daily dose of vitamins? Do you just not care? With Vitastats, you can continue to not care but gain knowledge of your vitamin intake and adjust your diet accordingly. Vitastats!
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Takes away the stress of figuring out whether you're getting your vitamins.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > Using the Fatsecret API, Vitastats aggregates data on the vitamin content of your food and presents your current vitamin intake in an easy to view format. We even present options for your next meal that will help you reach your vitamin goals.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "I had no idea how deficient in vitamin B I was until I used Vitastats, and now that I'm eating a ton of kale to boost my vitamin B intake I'm feeling great."
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > You don't even need an e-mail address, just make an account with a password. Once you're logged in, choose what you've eaten, and get a visual estimate on how you're doing on vitamins for the day.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "Me teeth were falling out of me head till I found out I wasn't getting me vitamin C! Thanks Vitastats! I can enjoy using my last three teeth, and hrrnghhgh" --Patcheye Skivvies, before succumbing to multiple stab wounds.
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Head over to vitastats.azurewebsites.net and make an account to have access to all of Vitastats features. It's that easy.
