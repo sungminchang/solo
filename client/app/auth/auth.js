@@ -1,14 +1,15 @@
-angular.module('shortly.auth', [])
+angular.module('vitastats.auth', [])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
   $scope.error = {};
 
   $scope.signin = function () {
+    console.log("made it to the signin function")
     Auth.signin($scope.user)
       .then(function (token) {
-        $window.localStorage.setItem('com.shortly', token);
-        $location.path('/links');
+        $window.localStorage.setItem('com.vitastats', token);
+        $location.path('/stats');
       })
       .catch(function (error) {
         console.error(error);
@@ -17,9 +18,10 @@ angular.module('shortly.auth', [])
   };
 
   $scope.signup = function () {
+    console.log("made it to the signup function")
     Auth.signup($scope.user)
       .then(function (token) {
-        $window.localStorage.setItem('com.shortly', token);
+        $window.localStorage.setItem('com.vitastats', token);
         $location.path('/links');
       })
       .catch(function (error) {
@@ -27,4 +29,6 @@ angular.module('shortly.auth', [])
         $scope.error.message = error.data.error;
       });
   };
+
+  console.log("made it to Authocontroller!");
 });

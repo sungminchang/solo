@@ -1,8 +1,7 @@
-angular.module('shortly', [
-  'shortly.services',
-  'shortly.links',
-  'shortly.shorten',
-  'shortly.auth',
+angular.module('vitastats', [
+  'vitastats.services',
+  'vitastats.foods',
+  'vitastats.auth',
   'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider) {
@@ -20,8 +19,8 @@ angular.module('shortly', [
       controller: 'FoodsController'
     })
     .otherwise({
-      templateUrl: 'app/auth/signin.html',
-      controller: 'LinksController'
+      templateUrl: 'app/auth/signup.html',
+      controller: 'AuthController'
     });
 
     $httpProvider.interceptors.push('AttachTokens');
@@ -29,7 +28,7 @@ angular.module('shortly', [
 .factory('AttachTokens', function ($window) {
   var attach = {
     request: function (object) {
-      var jwt = $window.localStorage.getItem('com.shortly');
+      var jwt = $window.localStorage.getItem('com.vitastats');
       if (jwt) {
         object.headers['x-access-token'] = jwt;
       }

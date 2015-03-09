@@ -1,6 +1,6 @@
 var User = require('./userModel.js'),
     Q    = require('q');
-    
+
 module.exports = {
   signin: function (req, res, next) {
     var username = req.body.username,
@@ -15,7 +15,7 @@ module.exports = {
           return user.comparePasswords(password)
             .then(function(foundUser) {
               if (foundUser) {
-                var token = jwt.encode(user, 'secret');
+                var token = {user: user, secret: 'secret'};
                 res.json({token: token});
               } else {
                 return next(new Error('No user'));
@@ -53,8 +53,8 @@ module.exports = {
       })
       .then(function (user) {
         // create token to send back for auth
-        var token = jwt.encode(user, 'secret');
-        res.json({token: token});
+        var token = {user: user, secret: 'secret'};
+        res.json(token);
       })
       .fail(function (error) {
         next(error);
@@ -70,7 +70,8 @@ module.exports = {
     if (!token) {
       next(new Error('No token'));
     } else {
-      var user = jwt.decode(token, 'secret');
+      var user = token;
+      console.log("user token in CheckAuth function", token);
       var findUser = Q.nbind(User.findOne, User);
       findUser({username: user.username})
         .then(function (foundUser) {
