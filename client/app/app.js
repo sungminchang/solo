@@ -18,6 +18,10 @@ angular.module('vitastats', [
       templateUrl: 'app/food/food.html',
       controller: 'FoodsController'
     })
+    .when('/stats', {
+      templateUrl: 'app/stats/stat.html',
+      controller: 'StatsController'
+    })
     .otherwise({
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
