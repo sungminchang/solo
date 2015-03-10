@@ -49,6 +49,11 @@ angular.module('vitastats.services', [])
     retrieveStats: retrieveStats
   };
 })
+.factory('d3Service', function(){
+   var d3;
+   // insert d3 code here
+   return d3;
+ })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
   // it is responsible for authenticating our user

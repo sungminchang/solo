@@ -1,7 +1,7 @@
 <div id='stats'>
   <h2>Daily Vitastats</h2>
-  <div name="barChart" ng-model="user">
-    <p> {{ user.foods }} </p>
+  <div name="barChart" ng-model="user.foods" ng-repeat="food in user.foods">
+    <p> {{ food.vitamins }} </p>
   </div>
   </form>
   <a href="#/foods"> Check out foods you can add <strong>Foods</strong> ...</a>
