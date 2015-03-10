@@ -16,10 +16,10 @@ angular.module('vitastats.services', [])
     });
   };
 
-  var addFood = function(food) {
+  var toggleFoods = function(food) {
     return $http({
       method: 'POST',
-      url: '/api/foods',
+      url: '/api/users/toggle',
       data: food
     })
     .then(function(resp) {
@@ -30,7 +30,7 @@ angular.module('vitastats.services', [])
 
     return {
       retrieveFoods: retrieveFoods,
-      addFood: addFood
+      toggleFoods: toggleFoods
     };
 
 })

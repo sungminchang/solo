@@ -4,20 +4,8 @@ var Food    = require('./foodModel.js'),
 
 
 module.exports = {
-  findUrl: function (req, res, next, code) {
-    var findFood = Q.nbind(Food.findOne, Food);
-    findFood({code: code})
-      .then(function (food) {
-        if (food) {
-          req.navFood = food;
-          next();
-        } else {
-          next(new Error('Food not added yet'));
-        }
-      })
-      .fail(function (error) {
-        next(error);
-      });
+  toggleFood: function(req, res, next) {
+    // var
   },
 
   allFoods: function (req, res, next) {

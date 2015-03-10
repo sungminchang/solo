@@ -82,8 +82,12 @@ module.exports = {
           }
         })
         .fail(function (error) {
-          next(error);
+          next(Error);
         });
     }
+  },
+
+  toggle: function (req, res, next) {
+
   }
 };

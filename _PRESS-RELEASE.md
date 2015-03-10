@@ -15,6 +15,8 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
 
+* indicates that the feature is a luxury
+
 Log in, log out
 
 See stats for the day
@@ -24,17 +26,27 @@ See stats for the day
 
     Adjust food size from the base given size.
 
-Check past days diets
 
-See suggestions for your next meal that would help you hit your vitamin requirements. (assuming breakfast, lunch, dinner are the meals you eat)
+*Allow users to request new food items
 
-Add friends and see their diets
+  Add requested foods to text file
 
-Vitamin battles
+  Have cron job check the file every now and then, and have the cron try to retrieve the relevant information from FatSecret API.
+
+
+*Allow user to set when the vitamin tracker will reset
+
+*Check past days diets
+
+*See suggestions for your next meal that would help you hit your vitamin requirements. (assuming breakfast, lunch, dinner are the meals you eat)
+
+*Add friends and see their diets
+
+*Vitamin battles
 
     See who can skirt the edge of the maximum daily dose on vitamins for the longest or something
 
-Vitamin achievements
+*Vitamin achievements
 
 
  -->
