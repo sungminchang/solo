@@ -64,18 +64,6 @@ angular.module('vitastats', [
               scope.$apply();
             };
 
-            // hard-code data
-            // scope.data = [
-            //   {name: "Greg", score: 98},
-            //   {name: "Ari", score: 96},
-            //   {name: 'Q', score: 75},
-            //   {name: "Loser", score: 48},
-            //   {name: "Hello", score: 45},
-            //   {name: "Hello", score: 35},
-            //   {name: "Hello", score: 25},
-            //   {name: "Hello", score: 15}
-            // ];
-
             // Watch for resize event
             scope.$watch(function() {
               return angular.element($window)[0].innerWidth;
@@ -98,7 +86,7 @@ angular.module('vitastats', [
                   // our xScale
                   xScale = d3.scale.linear()
                     .domain([0, d3.max(data, function(d) {
-                      return d.score;
+                      return d.percent;
                     })])
                     .range([0, width]);
 
@@ -115,11 +103,11 @@ angular.module('vitastats', [
                   .attr('y', function(d,i) {
                     return i * (barHeight + barPadding);
                   })
-                  .attr('fill', function(d) { return color(d.score); })
+                  .attr('fill', function(d) { return color(d.percent); })
                   .transition()
                     .duration(1000)
                     .attr('width', function(d) {
-                      return xScale(d.score);
+                      return xScale(d.percent);
                     });
               svg.selectAll('text')
                 .data(data).enter()
@@ -130,7 +118,7 @@ angular.module('vitastats', [
                   })
                   .attr('x', 15)
                   .text(function(d) {
-                    return d.name + " " + d.score;
+                    return d.vitamin + " " + d.percent + "%";
                   });
 
 
