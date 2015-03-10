@@ -28,11 +28,26 @@ angular.module('vitastats.services', [])
     });
   };
 
-    return {
-      retrieveFoods: retrieveFoods,
-      toggleFoods: toggleFoods
-    };
+  return {
+    retrieveFoods: retrieveFoods,
+    toggleFoods: toggleFoods
+  };
 
+})
+.factory('Stats', function ($http) {
+  var retrieveStats = function() {
+    return $http({
+      method: 'GET',
+      url: '/api/users/stats'
+    })
+    .then(function(resp) {
+      return resp.data;
+    });
+  };
+
+  return {
+    retrieveStats: retrieveStats
+  };
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!

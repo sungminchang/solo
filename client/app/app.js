@@ -1,6 +1,7 @@
 angular.module('vitastats', [
   'vitastats.services',
   'vitastats.foods',
+  'vitastats.stats',
   'vitastats.auth',
   'ngRoute'
 ])
@@ -23,8 +24,8 @@ angular.module('vitastats', [
       controller: 'StatsController'
     })
     .otherwise({
-      templateUrl: 'app/auth/signup.html',
-      controller: 'AuthController'
+      templateUrl: 'app/stats/stats.html',
+      controller: 'StatsController'
     });
 
     $httpProvider.interceptors.push('AttachTokens');

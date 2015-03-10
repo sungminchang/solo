@@ -1,13 +1,16 @@
 angular.module('vitastats.stats', [])
 
-.controller('StatsController', function ($scope, $http, Stat) {
-  $scope.data = {};
+.controller('StatsController', function ($scope, Stats) {
+  $scope.user = {};
   $scope.predicate = '-visits';
+  console.log("inside StatsController")
 
-  $scope.getLinks = function() {
-    Stat.retrieveFoods()
+  $scope.retrieveStats = function() {
+    console.log("trying to retrieve stats")
+    Stats.retrieveStats()
       .then(function(data) {
-        $scope.data.links = data;
+        $scope.user = data;
+        console.log($scope.user);
       })
       .catch(function(error) {
         console.error(error);
@@ -15,22 +18,6 @@ angular.module('vitastats.stats', [])
 
   };
 
-})
-.filter('searchFor', function(){
-    return function(arr, searchString){
-        if(!searchString){
-            return arr;
-        }
-        var result = [];
-        searchString = searchString.toLowerCase();
-        angular.forEach(arr, function(item){
-            if(item.url.toLowerCase().indexOf(searchString) !== -1){
-            result.push(item);
-        }
-        });
-        return result;
+  $scope.retrieveStats();
 
-        // Took code from
-        // http://code.ciphertrick.com/2015/02/07/live-search-using-custom-filter-in-angular-js/
-    };
 });

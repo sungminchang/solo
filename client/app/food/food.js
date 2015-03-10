@@ -3,7 +3,7 @@
 
 angular.module('vitastats.foods', [])
 
-.controller('FoodsController', function ($scope, $http, Foods) {
+.controller('FoodsController', function ($scope, Foods) {
   // Your code here
   $scope.data = {};
 
@@ -11,7 +11,6 @@ angular.module('vitastats.foods', [])
     console.log("about to try to retrieveFoods from inside the getFoods function!")
     Foods.retrieveFoods()
       .then(function(data) {
-        console.log(data);
         $scope.data.foods = data;
       })
       .catch(function(error) {

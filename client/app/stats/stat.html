@@ -1,6 +1,9 @@
 <div id='stats'>
-  <h3>Daily Vitastats</h3>
-  <form name="foodDropDownMenu" ng-submit='foodToggle()'>
+  <h2>Daily Vitastats</h2>
+  <div name="barChart" ng-repeat="vitamin in vitamins">
+    <div> {{ user }} </div>
+  </div>
   </form>
-  <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
+  <a href="#/foods"> Check out foods you can add <strong>Foods</strong> ...</a>
+
 </div>

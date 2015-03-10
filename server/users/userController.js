@@ -117,6 +117,17 @@ module.exports = {
         res.send(user);
       });
     });
+  },
 
+  retrieveStats: function(req, res, next) {
+    User.findOne({username: "test"}, function(err, user) {
+      if (err) return handleError(err);
+
+      user.save(function(err) {
+        if (err) return handleError(err);
+        res.send(user);
+      })
+
+    })
   }
 };
