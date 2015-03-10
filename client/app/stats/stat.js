@@ -1,20 +1,15 @@
 angular.module('vitastats.stats', [])
 
-.controller('StatsController', function ($scope, Stats) {
+.controller('StatsController', function ($scope, $window, Stats) {
   $scope.user = {};
   $scope.user.foods = [];
-  // [
-  //   {vitamin: "A", percent: 8},
-  //   {vitamin: "B", percent: 6},
-  //   {vitamin: 'D', percent: 5},
-  //   {vitamin: "Calcium", percent: 48},
-  //   {vitamin: "Hello", percent: 45},
-  //   {vitamin: "Hello", percent: 35},
-  //   {vitamin: "Hello", percent: 25},
-  //   {vitamin: "Hello", percent: 15}
-  // ];
+
   $scope.predicate = '-visits';
   console.log("inside StatsController")
+
+  $scope.$on('rerender', function() {
+    $scope.retrieveStats();
+  });
 
   $scope.retrieveStats = function() {
     console.log("trying to retrieve stats")
@@ -83,6 +78,7 @@ angular.module('vitastats.stats', [])
   $scope.toggleFoods = function(food) {
     console.log("inside togglefood", food);
     Foods.toggleFoods(food);
+    $scope.$emit('reRender');
   }
 
   $scope.getFoods();

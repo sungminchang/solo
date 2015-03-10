@@ -66,10 +66,14 @@ angular.module('vitastats', [
 
             // Watch for resize event
             scope.$watch(function() {
-              return scope.data;
+              return angular.element($window)[0].innerWidth;
             }, function() {
               scope.render(scope.data);
             });
+
+            scope.$watch('data', function(newVals, oldVals) {
+              return scope.render(newVals);
+            }, false);
 
             scope.render = function(data) {
               svg.selectAll('*').remove();
@@ -134,5 +138,10 @@ angular.module('vitastats', [
     if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
       $location.path('/signin');
     }
+  });
+
+  $rootScope.$on('reRender', function(evt, next, current) {
+    console.log('made it to Rootscope')
+    $rootScope.$broadcast('rerender');
   });
 });
