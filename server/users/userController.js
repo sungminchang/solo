@@ -95,7 +95,7 @@ module.exports = {
     // var id =
     // console.log($window.localStorage.getItem('com.vitastats'));
 
-    User.findOne({username: "asdfasdf"}, function (err, user) { // HARD CODED
+    User.findOne({username: "test"}, function (err, user) { // HARD CODED
       // THE USERNAME IN. FIND A NEW WAY TO DO THIS SHIZ
       if (err) return handleError(err);
 
@@ -104,11 +104,12 @@ module.exports = {
       //
 
       if (user.foods === undefined) {
-        user.foods = food;
         user.test = "hi";
       } else {
         user.foods.push(food);
       }
+
+      user.update({})
 
       console.log(user)
       user.save(function (err) {
