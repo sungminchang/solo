@@ -1,8 +1,10 @@
 angular.module('vitastats', [
   'vitastats.services',
   'vitastats.foods',
+  'vitastats.d3',
   'vitastats.stats',
   'vitastats.auth',
+  'vitastats.directives',
   'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider) {
