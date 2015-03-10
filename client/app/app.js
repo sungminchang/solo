@@ -151,7 +151,7 @@ angular.module('vitastats', [
   });
 
   $rootScope.$on('reRender', function(evt, next, current) {
-    console.log('made it to Rootscope')
+    // console.log('made it to Rootscope')
     $rootScope.$broadcast('rerender');
   });
 });

@@ -99,17 +99,19 @@ module.exports = {
       // THE USERNAME IN. FIND A NEW WAY TO DO THIS SHIZ
       if (err) return handleError(err);
 
-      console.log('user:', user)
+      // console.log('user:', user)
       // ;, 'food:', food);
       //
+      //
+      // for (var i = 0; i < user.foods.length; i++) {
+      //   if (user.foods[i].name === food.name) {
+      //     user.save(function (err) {
+      //       if (err) return handleError(err);
+      //       res.send(user);
+      //     });        }
+      // }
 
-      if (user.foods === undefined) {
-        user.test = "hi";
-      } else {
-        user.foods.push(food);
-      }
-
-      user.update({})
+      user.foods.push(food);
 
       console.log(user)
       user.save(function (err) {

@@ -49,6 +49,16 @@ See stats for the day
 *Vitamin achievements
 
 
+Smoothly animate the transition between different vitastates.
+
+Make the toggleFood option truly a toggle
+
+* Count how many times a food has been eaten and order based on that info
+
+
+
+
+
  -->
 
 ## Heading ##

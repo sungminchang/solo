@@ -3,9 +3,15 @@
 
     <d3-bars data="user.vitamins"></d3-bars>
     <button ng-click="resetStats()">Reset foods for the day</button>
+
+    <div id="daysFoods" ng-repeat "food in user.foods">
+      <p class='name'> {{ food.name }} </p>
+    </div>
 </div>
 
+
 <div id='food' ng-controller="FoodsController">
+
   <h2>Food choices</h2>
   <input type="text" ng-model="searchString" placeholder="Start typing the name of a food or restaurant.">
 
