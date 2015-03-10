@@ -22,7 +22,7 @@ angular.module('vitastats.auth', [])
     Auth.signup($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.vitastats', token);
-        $location.path('/links');
+        $location.path('/stats');
       })
       .catch(function (error) {
         console.error(error);

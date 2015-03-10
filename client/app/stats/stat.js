@@ -55,10 +55,14 @@ angular.module('vitastats.stats', [])
 
   };
 
+  $scope.resetUserFoods = function() {
+
+  };
+
   $scope.retrieveStats();
 
 })
-.controller('FoodsController', function ($scope, Foods) {
+.controller('RestaurantsController', function ($scope, Foods) {
   // Your code here
   $scope.data = {};
 
@@ -94,6 +98,55 @@ angular.module('vitastats.stats', [])
             if(item.url.toLowerCase().indexOf(searchString) !== -1){
             result.push(item);
         }
+        });
+        return result;
+
+        // Took code from
+        // http://code.ciphertrick.com/2015/02/07/live-search-using-custom-filter-in-angular-js/
+    };
+})
+.controller('FoodsController', function ($scope, Foods) {
+  // Your code here
+  $scope.data = {};
+  // $scope.predicate = '-eats';
+
+  $scope.getFoods = function() {
+    console.log("about to try to retrieveFoods from inside the getFoods function!")
+    Foods.retrieveFoods()
+      .then(function(data) {
+        console.log("sucessfully retrieved foods");
+        $scope.data.foods = data;
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+
+  };
+
+  $scope.toggleFoods = function(food) {
+    console.log("inside togglefood", food);
+    Foods.toggleFoods(food);
+    $scope.$emit('reRender');
+  }
+
+  $scope.getFoods();
+})
+.filter('searchFor', function(){
+    return function(arr, searchString){
+        if(!searchString){
+            return arr;
+        }
+        var result = [];
+        searchString = searchString.toLowerCase();
+        angular.forEach(arr, function(item){
+            if(item.name.toLowerCase().indexOf(searchString) !== -1){
+              result.push(item);
+            // } else if (item.name.toLowerCase().indexOf(searchString) !== -1){
+            //   result.push(item);
+            // } else {
+            //   return;
+            // }
+            }
         });
         return result;
 

@@ -14,17 +14,13 @@ angular.module('vitastats', [
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
     })
-    .when('/foods', {
-      templateUrl: 'app/food/food.html',
-      controller: 'FoodsController'
-    })
     .when('/stats', {
       templateUrl: 'app/stats/stat.html',
       controller: 'StatsController'
     })
     .otherwise({
-      templateUrl: 'app/stats/stat.html',
-      controller: 'StatsController'
+      templateUrl: 'app/auth/signup.html',
+      controller: 'AuthController'
     });
 
     $httpProvider.interceptors.push('AttachTokens');
