@@ -87,7 +87,35 @@ module.exports = {
     }
   },
 
-  toggle: function (req, res, next) {
+  toggleFoods: function (req, res, next) {
+
+    // console.log(req.body);
+
+    var food = req.body;
+    // var id =
+    // console.log($window.localStorage.getItem('com.vitastats'));
+
+    User.findOne({username: "asdfasdf"}, function (err, user) { // HARD CODED
+      // THE USERNAME IN. FIND A NEW WAY TO DO THIS SHIZ
+      if (err) return handleError(err);
+
+      console.log('user:', user)
+      // ;, 'food:', food);
+      //
+
+      if (user.foods === undefined) {
+        user.foods = food;
+        user.test = "hi";
+      } else {
+        user.foods.push(food);
+      }
+
+      console.log(user)
+      user.save(function (err) {
+        if (err) return handleError(err);
+        res.send(user);
+      });
+    });
 
   }
 };

@@ -12,3 +12,4 @@
 // Used command 'mongoimport --db vitastats --collection foods --file sampleFoods.json'
 // to import sample files into database.
 
+// use command db.foods.drop() to drop tables.
