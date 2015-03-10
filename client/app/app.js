@@ -66,7 +66,7 @@ angular.module('vitastats', [
 
             // Watch for resize event
             scope.$watch(function() {
-              return angular.element($window)[0].innerWidth;
+              return scope.data;
             }, function() {
               scope.render(scope.data);
             });

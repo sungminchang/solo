@@ -1,14 +1,20 @@
 <div id='stats'>
   <h2>Daily Vitastats</h2>
-  <div name="vitamins" ng-model="user.vitamins" ng-repeat="vitamin in user.vitamins">
-    <p> {{ vitamin }} </p>
-
-  </div>
 
     <d3-bars data="user.vitamins"></d3-bars>
 
-
   </form>
   <a href="#/foods"> Check out foods you can add <strong>Foods</strong> ...</a>
+
+</div>
+
+
+<div id='food' ng-controller="FoodsController">
+  <h1>Food choices</h1>
+    <div class="info" ng-repeat="food in data.foods" ng-click="toggleFoods(food)">
+      <p class='name'>{{food.name}}</p>
+      <p class='description'>{{food.description}}</p>
+    </div>
+      <a href="#/stats"> Check out your stats for the day <strong>Stats</strong> ...</a>
 
 </div>
