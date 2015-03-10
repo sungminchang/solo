@@ -1,6 +1,5 @@
 angular.module('vitastats', [
   'vitastats.services',
-  'vitastats.foods',
   'vitastats.stats',
   'vitastats.auth',
   'ngRoute'
@@ -24,7 +23,7 @@ angular.module('vitastats', [
       controller: 'StatsController'
     })
     .otherwise({
-      templateUrl: 'app/stats/stats.html',
+      templateUrl: 'app/stats/stat.html',
       controller: 'StatsController'
     });
 
@@ -74,6 +73,21 @@ angular.module('vitastats', [
             scope.$watch('data', function(newVals, oldVals) {
               return scope.render(newVals);
             }, false);
+
+            // scope.update = function(data) {
+            //   svg.selectAll('rect')
+            //     .data(data).enter()
+            //     .attr('width')
+            //     .transition()
+            //       .duration(1000)
+            //       .attr('width', function(d) {
+            //         return xScale(d.percent);
+            //       });
+            // };
+            //
+            // Have the bar chart smoothly change between different states
+            // instead of being erased every time. This seems like a low priority
+            // feature for now.
 
             scope.render = function(data) {
               svg.selectAll('*').remove();
