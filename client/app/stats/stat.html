@@ -1,10 +1,11 @@
 <div id='stats'>
   <h2>Daily Vitastats</h2>
-  <div name="barChart" ng-model="user.foods" ng-repeat="food in user.foods">
+  <div name="vitamins" ng-model="user.foods" ng-repeat="food in user.foods">
     <p> {{ food.vitamins }} </p>
 
   </div>
-    <div d3-bars bar-height="20" bar-padding="5"></div>
+
+    <d3-bars data="data"></d3-bars>
   
 
   </form>

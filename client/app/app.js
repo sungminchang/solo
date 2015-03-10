@@ -46,7 +46,9 @@ angular.module('vitastats', [
 .directive('d3Bars', ['d3', '$window', function(d3, $window) {
   return {
       restrict: 'EA',
-      scope: {},
+      scope: {
+        data: '='
+      },
       link: function(scope, element, attrs) {
           var margin = parseInt(attrs.margin) || 20,
               barHeight = parseInt(attrs.barHeight) || 20,
@@ -63,12 +65,16 @@ angular.module('vitastats', [
             };
 
             // hard-code data
-            scope.data = [
-              {name: "Greg", score: 98},
-              {name: "Ari", score: 96},
-              {name: 'Q', score: 75},
-              {name: "Loser", score: 48}
-            ];
+            // scope.data = [
+            //   {name: "Greg", score: 98},
+            //   {name: "Ari", score: 96},
+            //   {name: 'Q', score: 75},
+            //   {name: "Loser", score: 48},
+            //   {name: "Hello", score: 45},
+            //   {name: "Hello", score: 35},
+            //   {name: "Hello", score: 25},
+            //   {name: "Hello", score: 15}
+            // ];
 
             // Watch for resize event
             scope.$watch(function() {
