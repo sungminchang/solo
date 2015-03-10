@@ -15,6 +15,10 @@ h1 {
   margin-bottom: 10px;
 }
 
+text {
+  text-shadow: 2px 1px 1px black!important;
+}
+
 .info {
   background-color: #ddd;
   margin-top: 5px;

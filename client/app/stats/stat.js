@@ -38,6 +38,7 @@ angular.module('vitastats.stats', [])
               vitamins[vitamin] += foodsVitamins[vitamin];
             }
           }
+          console.log(food.name);
           // console.log(food.vitamins);
         }
 
