@@ -8,4 +8,5 @@ module.exports = function (app) {
   app.post('/signup', userController.signup);
   app.get('/signedin', userController.checkAuth);
   app.get('/stats', userController.retrieveStats);
+  app.get('/reset', userController.resetStats);
 };

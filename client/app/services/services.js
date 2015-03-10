@@ -45,8 +45,20 @@ angular.module('vitastats.services', [])
     });
   };
 
+  var resetStats = function() {
+    console.log('made it into resetStats service function')
+    return $http({
+      method: 'GET',
+      url: '/api/users/reset'
+    })
+    .then(function(resp) {
+      return resp.data;
+    });
+  };
+
   return {
-    retrieveStats: retrieveStats
+    retrieveStats: retrieveStats,
+    resetStats: resetStats
   };
 })
 .factory('d3', ['$document', '$q', '$rootScope',

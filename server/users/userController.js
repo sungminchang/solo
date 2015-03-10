@@ -129,5 +129,18 @@ module.exports = {
       })
 
     })
+  },
+
+  resetStats: function(req, res, next) {
+    User.findOne({username: "test"}, function(err, user) {
+      if (err) return handleError(err);
+
+      user.foods = [];
+      user.save(function(err) {
+        if (err) return handleError(err);
+        res.send(user);
+      })
+
+    })
   }
 };

@@ -55,8 +55,9 @@ angular.module('vitastats.stats', [])
 
   };
 
-  $scope.resetUserFoods = function() {
-
+  $scope.resetStats = function() {
+    Stats.resetStats();
+    $scope.$emit('reRender');
   };
 
   $scope.retrieveStats();
