@@ -31,6 +31,14 @@ text {
   background-color: #eee;
 }
 
+/*#daysFoods {
+  display: inline-block;
+}*/
+
+#foods {
+  display: inline;
+}
+
 .navigation ul {
   margin: 0;
   padding: 0;

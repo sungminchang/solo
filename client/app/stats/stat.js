@@ -16,6 +16,19 @@ angular.module('vitastats.stats', [])
     Stats.retrieveStats()
       .then(function(data) {
         var foods = data.foods; // foods == array
+        var counter = {};
+        for (var i = 0; i < foods.length; i++) {
+          if (counter[foods[i].name] === undefined) {
+            counter[foods[i].name] = 1;
+          } else {
+            counter[foods[i].name]++;
+          }
+        }
+        for (var food in counter) {
+          var string = '';
+          string += food + " x " + counter[food];
+          $scope.user.foods.push(string);
+        }
 
         var result = [];
         var vitamins = {};

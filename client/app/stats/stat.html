@@ -4,8 +4,8 @@
     <d3-bars data="user.vitamins"></d3-bars>
     <button ng-click="resetStats()">Reset foods for the day</button>
 
-    <div id="daysFoods" ng-repeat "food in user.foods">
-      <p class='name'> {{ food.name }} </p>
+    <div id="daysFoods" ng-repeat="food in user.foods">
+      <p class='foodname'>{{ food }} </p>
     </div>
 </div>
 
