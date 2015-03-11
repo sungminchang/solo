@@ -99,10 +99,9 @@ angular.module('vitastats', [
                   color = d3.scale.category20(),
                   // our xScale
                   xScale = d3.scale.linear()
-                    .domain([0, d3.max(data, function(d) {
-                      return d.percent;
-                    })])
-                    .range([0, width]);
+                    .domain([0, 100])
+                    .range([0, width]),
+                  xAxis = d3.svg.axis().scale(xScale).tickSize(-height).tickSubdivide(true);
 
               // set the height based on the calculations above
               svg.attr('height', height);
